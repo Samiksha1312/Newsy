@@ -6,7 +6,8 @@ import News from './components/News';
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  HashRouter
 } from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
 
@@ -26,7 +27,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Router basename="/Newsy"> 
+        <HashRouter basename="/Newsy"> 
         <LoadingBar
         height={3}
         color='#f11946'
@@ -43,7 +44,7 @@ export default class App extends Component {
             <Route exact path="/sports" element={<News setProgress={this.setProgress} apiKey="1eb9b79742c545bf9280a552c61601e7" key="sports" pageSize={this.pageSize} country="in" category="sports"/>}></Route>
             <Route exact path="/technology" element={<News setProgress={this.setProgress} apiKey={this.apiKey} key="1eb9b79742c545bf9280a552c61601e7" pageSize={this.pageSize} country="in" category="technology"/>}></Route>
           </Routes>
-        </Router>
+        </HashRouter>
       </div>
     );
   }
