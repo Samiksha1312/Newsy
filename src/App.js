@@ -26,7 +26,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Router>
+        <Router basename="/Newsy"> 
         <LoadingBar
         height={3}
         color='#f11946'
@@ -34,7 +34,7 @@ export default class App extends Component {
       />
           <Navbar />  
           <Routes>
-            <Route exact path="/" element={<News setProgress={this.setProgress} apiKey={this.apiKey} key="general" pageSize={this.pageSize} country="in" category="general"/>}></Route>
+            <Route exact path="/Newsy" element={<News setProgress={this.setProgress} apiKey={this.apiKey} key="general" pageSize={this.pageSize} country="in" category="general"/>}></Route>
             <Route exact path="/business" element={<News setProgress={this.setProgress} apiKey={this.apiKey} key="business" pageSize={this.pageSize} country="in" category="business"/>}></Route>
             <Route exact path="/entertainment" element={<News setProgress={this.setProgress} apiKey={this.apiKey} key="entertainment" pageSize={this.pageSize} country="in" category="entertainment"/>}></Route>
             <Route exact path="/general" element={<News setProgress={this.setProgress} apiKey={this.apiKey} key="general" pageSize={this.pageSize} country="in" category="general"/>}></Route>
